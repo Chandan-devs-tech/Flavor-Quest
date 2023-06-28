@@ -61,8 +61,6 @@ const showMeals = async () => {
     // Attach the click event listener to the comment button
     commentBtn.addEventListener('click', commentBtnPop);
 
-    // closeButton.addEventListener('click', closePopup);
-
     // Create the reservation button
     const reservationBtn = document.createElement('button');
     reservationBtn.className = 'reservation-btn';
