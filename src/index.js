@@ -80,14 +80,13 @@ const showMeals = async () => {
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
 
-    // Attach the click event listener to the comment button
-    commentBtn.addEventListener('click', commentBtnPop);
+      // Attach the click event listener to the comment button
+      commentBtn.addEventListener('click', commentBtnPop);
 
-    // Create the reservation button
-    const reservationBtn = document.createElement('button');
-    reservationBtn.className = 'reservation-btn';
-    reservationBtn.textContent = 'Reservation';
-
+      // Create the reservation button
+      const reservationBtn = document.createElement('button');
+      reservationBtn.className = 'reservation-btn';
+      reservationBtn.textContent = 'Reservation';
 
       // Append the buttons to the button container div
       btnContainerDiv.appendChild(commentBtn);
