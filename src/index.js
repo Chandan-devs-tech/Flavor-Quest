@@ -1,5 +1,5 @@
 import './style.css';
-import { commentBtnPop } from './modules/commentPopUp';
+import commentBtnPop from './modules/commentPopUp.js';
 
 const baseUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American';
 
@@ -85,5 +85,3 @@ const showMeals = async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   await showMeals();
 });
-
-
