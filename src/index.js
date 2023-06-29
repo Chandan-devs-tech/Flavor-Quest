@@ -2,6 +2,7 @@ import './style.css';
 // import { commentBtnPop } from './modules/commentPopUp';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';
+import commentBtnPop from './modules/commentPopUp.js';
 
 // const baseUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American';
 // const involvementLikeUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/nAowKIQaetz8oNeFtqjs/likes/';
@@ -79,13 +80,14 @@ const showMeals = async () => {
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
 
-      // Attach the click event listener to the comment button
-      // commentBtn.addEventListener('click', commentBtnPop);
+    // Attach the click event listener to the comment button
+    commentBtn.addEventListener('click', commentBtnPop);
 
-      // Create the reservation button
-      const reservationBtn = document.createElement('button');
-      reservationBtn.className = 'reservation-btn';
-      reservationBtn.textContent = 'Reservation';
+    // Create the reservation button
+    const reservationBtn = document.createElement('button');
+    reservationBtn.className = 'reservation-btn';
+    reservationBtn.textContent = 'Reservation';
+
 
       // Append the buttons to the button container div
       btnContainerDiv.appendChild(commentBtn);
