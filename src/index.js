@@ -1,38 +1,10 @@
 import './style.css';
-// import { commentBtnPop } from './modules/commentPopUp';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';
-import commentBtnPop from './modules/commentPopUp.js';
-
-// const baseUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American';
-// const involvementLikeUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/nAowKIQaetz8oNeFtqjs/likes/';
-// const involvementCommentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/nAowKIQaetz8oNeFtqjs/comments/';
+import popupWindow from './modules/commentPopUp.js';
 
 let arrayOfMeals = [];
 const mainContainer = document.querySelector('.main-container');
-// const getData = async () => {
-//   const result = await fetch(baseUrl);
-//   const { meals } = await result.json();
-//   return meals;
-// };
-
-// const fetchLikes = async ()=>{
-//   try {
-//     const result = await fetch(involvementLikeUrl,{
-//       method: 'GET',
-//       headers: {
-//         'Content-type': 'application/json; charset=UTF-8',
-//       },
-//     });
-//     const data = await result.json();
-//     console.log(data);
-//     return data;
-//   }
-//   catch(error){
-//     return [];
-//   }
-// }
-
 const showMeals = async () => {
   try {
     arrayOfMeals = await getData();
@@ -79,9 +51,10 @@ const showMeals = async () => {
       const commentBtn = document.createElement('button');
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
-
-      // Attach the click event listener to the comment button
-      commentBtn.addEventListener('click', commentBtnPop);
+      commentBtn.addEventListener('click', () => {
+        console.log(item.idMeal);
+        popupWindow(item.idMeal);
+      });
 
       // Create the reservation button
       const reservationBtn = document.createElement('button');
