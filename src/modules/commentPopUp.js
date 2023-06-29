@@ -1,6 +1,3 @@
-// import { textContent } from 'domutils';
-// import { doc } from 'prettier';
-
 const mainContainer = document.querySelector('.main-container');
 const commentBtnPop = (event) => {
   // Get the gallery item containing the clicked comment button
