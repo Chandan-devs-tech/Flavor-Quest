@@ -1,11 +1,14 @@
 /* eslint-disable no-console */
 import './style.css';
+import sendLike from './modules/sendLike.js';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';
 import popupWindow from './modules/commentPopUp.js';
+import { mealcounter, showCount } from './modules/mealCounter.js';
 
 let arrayOfMeals = [];
 const mainContainer = document.querySelector('.main-container');
+const footer = document.querySelector('.footer');
 const showMeals = async () => {
   try {
     arrayOfMeals = await getData();
@@ -54,8 +57,8 @@ const showMeals = async () => {
       commentBtn.textContent = 'Comment';
 
       commentBtn.addEventListener('click', () => {
-        console.log(item.idMeal);
         popupWindow(item.idMeal);
+        footer.style.display = 'none';
       });
 
       // Create the reservation button
@@ -84,6 +87,15 @@ const showMeals = async () => {
 
       countOfLikes.textContent = `${likeOfMeal} likes`;
 
+      // Heart Icon event listener
+      const heartBtn = div.querySelector('.fa-heart');
+      heartBtn.addEventListener('click', () => {
+        sendLike(id, numOfLikesDiv);
+      });
+      heartBtn.addEventListener('mouseup', () => {
+        heartIcon.classList.add('fa-solid');
+        heartIcon.classList.remove('fa-regular');
+      });
       // Now you can use the main div in your DOM
       mainContainer.appendChild(div);
     });
@@ -93,5 +105,7 @@ const showMeals = async () => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
+  const num = await mealcounter();
   await showMeals();
+  showCount(num);
 });

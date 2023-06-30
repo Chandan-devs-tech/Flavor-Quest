@@ -9,8 +9,8 @@ const popupWindow = async (id) => {
 
   const data = await result.json();
   const mealDetails = data.meals[0];
-  // console.log(mealDetails);
   const overlay = document.createElement('div');
+  const footer = document.querySelector('.footer');
   overlay.classList.add('overlay');
 
   const popupContainer = document.createElement('div');
@@ -18,7 +18,7 @@ const popupWindow = async (id) => {
 
   const closeButton = document.createElement('button');
   closeButton.className = 'popup-close';
-  closeButton.innerHTML = 'X';
+  closeButton.innerHTML = '&times';
 
   const img = new Image();
   const popupImage = document.createElement('div');
@@ -34,10 +34,30 @@ const popupWindow = async (id) => {
  `;
 
   const popupFoodName = document.createElement('h3');
+  popupFoodName.className = 'food-name';
   popupFoodName.textContent = `${mealDetails.strMeal}`;
 
+  // const commentHeader = document.createElement('h4');
+  // commentHeader.className = 'comment-header';
+  // commentHeader.innerHTML = 'Comments (Counter coming soon)';
+
+  // const userCommentsDiv = document.createElement('div');
+  // userCommentsDiv.classList.add('comments-container');
+  // userCommentsDiv.innerHTML = `
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // `;
+
   const formTitle = document.createElement('div');
-  formTitle.className = 'comment-input-sec';
+  formTitle.className = 'form-title';
   formTitle.textContent = 'Add a comment';
 
   const form = document.createElement('form');
@@ -74,19 +94,20 @@ const popupWindow = async (id) => {
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
   form.appendChild(submit);
-
   popupContainer.appendChild(closeButton);
   popupContainer.appendChild(popupImage);
+  popupContainer.appendChild(popupFoodName);
   popupContainer.appendChild(imgDescipDiv);
+  popupContainer.appendChild(commentHeader);
+  popupContainer.appendChild(userCommentsDiv);
   popupContainer.appendChild(formTitle);
   popupContainer.appendChild(form);
-  popupContainer.appendChild(commentHeader);
   overlay.appendChild(popupContainer);
   mainContainer.appendChild(overlay);
-  popupContainer.appendChild(userCommentsDiv);
 
   const closePopup = () => {
     mainContainer.removeChild(overlay);
+    footer.style.display = 'flex';
   };
 
   closeButton.addEventListener('click', closePopup);
