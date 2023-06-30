@@ -6,7 +6,7 @@ const popupWindow = async (id) => {
   const result = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
   );
-  
+
   const data = await result.json();
   const mealDetails = data.meals[0];
   // console.log(mealDetails);
@@ -36,57 +36,39 @@ const popupWindow = async (id) => {
   const popupFoodName = document.createElement('h3');
   popupFoodName.textContent = `${mealDetails.strMeal}`;
 
-  
-  
   const formTitle = document.createElement('div');
   formTitle.className = 'comment-input-sec';
   formTitle.textContent = 'Add a comment';
-  
+
   const form = document.createElement('form');
   form.className = 'form';
-  
+
   const nameInput = document.createElement('input');
   nameInput.className = 'name-input';
   nameInput.type = 'text';
   nameInput.placeholder = 'Your Name';
-  
+
   const yourInsightInput = document.createElement('textarea');
   yourInsightInput.className = 'your-insight';
   yourInsightInput.cols = 40;
   yourInsightInput.rows = 6;
   yourInsightInput.placeholder = 'Your Insights';
-  
+
   const submit = document.createElement('button');
   submit.className = 'submit';
   submit.innerText = 'Submit';
-  
+
   const commentHeader = document.createElement('h4');
   commentHeader.className = 'comment-header';
   // commentHeader.innerHTML = '(Counter coming soon) Comments';
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
-  // userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
-  
-  // // set comments to API starts
-  // submit.addEventListener('click', async (event) => {
-  //   event.preventDefault();
-  //   const nameVal = nameInput.value;
-  //   const insightVal = yourInsightInput.value;
-  //   setComment(id, nameVal, insightVal);
-  //   const comments12 = await getComments(id);
-  //   console.log('This is comments12', comments12);
-  //   displayComment(comments12, userCommentsDiv);
-  // });
-  
-  const comments12 = await getComments(id);
-  displayComment(comments12, userCommentsDiv, commentHeader);
 
-  // set comments to API done
+  const allComments = await getComments(id);
+  displayComment(allComments, userCommentsDiv, commentHeader);
 
   // get comments from API starts
 
-  // getComments(`${involvementCommentUrl}?item_id=${id}`);  
-  
   // get comments from API done
 
   form.appendChild(nameInput);
@@ -115,9 +97,9 @@ const popupWindow = async (id) => {
     const nameVal = nameInput.value;
     const insightVal = yourInsightInput.value;
     setComment(id, nameVal, insightVal);
-    const comments12 = await getComments(id);
-    console.log('This is comments12', comments12);
-    displayComment(comments12, userCommentsDiv, commentHeader);
+    const allComments = await getComments(id);
+    console.log('This is allComments', allComments);
+    displayComment(allComments, userCommentsDiv, commentHeader);
   });
 };
 
