@@ -1,4 +1,5 @@
-/* eslint-disable no-console no-alert */
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { involvementCommentUrl } from './apiData.js';
 
 const setComment = async (param1, param2, param3) => {
