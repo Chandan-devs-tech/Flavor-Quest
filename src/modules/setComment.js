@@ -21,20 +21,22 @@ const setComment = async (param1, param2, param3) => {
       if (response.ok) {
         console.log('Comment submitted successfully');
         console.log(commentData);
+        alert('Your comment is received.');
+      } else {
+        alert('Please fill all the fields.');
       }
-      //   else {
-      //     console.error('Error submitting comment');
-      //   }
-
-      // const json = await response.json();
-      // return json;
     } catch (error) {
       console.error('Error submitting comment', error);
     }
+  } else if (!param2 || !param3) {
+    const commentData = {
+      item_id: param1,
+      username: param2,
+      comment: param3,
+    };
+    alert('Please fill all the fields.');
+    console.error('Error submitting comment');
   }
-//     else {
-//     console.error('Please provide a name and comment');
-//   }
 };
 
 export default setComment;
