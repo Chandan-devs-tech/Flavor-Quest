@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+import setComment from './setComment.js';
+
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
   const result = await fetch(
@@ -63,6 +66,15 @@ const popupWindow = async (id) => {
   const submit = document.createElement('button');
   submit.className = 'submit';
   submit.innerText = 'Submit';
+
+  // set comments to API starts
+  submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    const nameVal = nameInput.value;
+    const insightVal = yourInsightInput.value;
+    setComment(id, nameVal, insightVal);
+  });
+  // set comments to API done
 
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);

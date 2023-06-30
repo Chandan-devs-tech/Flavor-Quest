@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import './style.css';
 import sendLike from './modules/sendLike.js';
 import fetchLikes from './modules/getLike.js';
