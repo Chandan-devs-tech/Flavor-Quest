@@ -1,7 +1,9 @@
+import setComment from './setComment.js';
+
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
   const result = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   );
   const data = await result.json();
   const mealDetails = data.meals[0];
@@ -38,7 +40,8 @@ const popupWindow = async (id) => {
 
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
-  userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
+  userCommentsDiv.textContent =
+    'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
 
   const formTitle = document.createElement('div');
   formTitle.className = 'comment-input-sec';
@@ -61,6 +64,15 @@ const popupWindow = async (id) => {
   const submit = document.createElement('button');
   submit.className = 'submit';
   submit.innerText = 'Submit';
+
+  // set comments to API starts
+  submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    const nameVal = nameInput.value;
+    const insightVal = yourInsightInput.value;
+    setComment(id, nameVal, insightVal);
+  });
+  // set comments to API done
 
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
