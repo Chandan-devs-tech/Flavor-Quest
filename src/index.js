@@ -55,6 +55,7 @@ const showMeals = async () => {
       const commentBtn = document.createElement('button');
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
+
       commentBtn.addEventListener('click', () => {
         popupWindow(item.idMeal);
         footer.style.display = 'none';

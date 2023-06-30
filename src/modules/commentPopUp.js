@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
-import setComment from './setComment.js';
+import { setComment, getComments, displayComment } from './setComment.js';
 
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
   const result = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
   );
+
   const data = await result.json();
   const mealDetails = data.meals[0];
   const overlay = document.createElement('div');
@@ -17,7 +18,7 @@ const popupWindow = async (id) => {
 
   const closeButton = document.createElement('button');
   closeButton.className = 'popup-close';
-  closeButton.innerHTML = 'X';
+  closeButton.innerHTML = '&times';
 
   const img = new Image();
   const popupImage = document.createElement('div');
@@ -36,24 +37,24 @@ const popupWindow = async (id) => {
   popupFoodName.className = 'food-name';
   popupFoodName.textContent = `${mealDetails.strMeal}`;
 
-  const commentHeader = document.createElement('h4');
-  commentHeader.className = 'comment-header';
-  commentHeader.innerHTML = 'Comments (Counter coming soon)';
+  // const commentHeader = document.createElement('h4');
+  // commentHeader.className = 'comment-header';
+  // commentHeader.innerHTML = 'Comments (Counter coming soon)';
 
-  const userCommentsDiv = document.createElement('div');
-  userCommentsDiv.classList.add('comments-container');
-  userCommentsDiv.innerHTML = `
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  <p>'User comment here</p>
-  `;
+  // const userCommentsDiv = document.createElement('div');
+  // userCommentsDiv.classList.add('comments-container');
+  // userCommentsDiv.innerHTML = `
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // `;
 
   const formTitle = document.createElement('div');
   formTitle.className = 'form-title';
@@ -77,14 +78,18 @@ const popupWindow = async (id) => {
   submit.className = 'submit';
   submit.innerText = 'Submit';
 
-  // set comments to API starts
-  submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    const nameVal = nameInput.value;
-    const insightVal = yourInsightInput.value;
-    setComment(id, nameVal, insightVal);
-  });
-  // set comments to API done
+  const commentHeader = document.createElement('h4');
+  commentHeader.className = 'comment-header';
+  // commentHeader.innerHTML = '(Counter coming soon) Comments';
+  const userCommentsDiv = document.createElement('div');
+  userCommentsDiv.classList.add('comments-container');
+
+  const allComments = await getComments(id);
+  displayComment(allComments, userCommentsDiv, commentHeader);
+
+  // get comments from API starts
+
+  // get comments from API done
 
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
@@ -106,6 +111,17 @@ const popupWindow = async (id) => {
   };
 
   closeButton.addEventListener('click', closePopup);
+
+  // set comments to API starts
+  submit.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const nameVal = nameInput.value;
+    const insightVal = yourInsightInput.value;
+    setComment(id, nameVal, insightVal);
+    const allComments = await getComments(id);
+    console.log('This is allComments', allComments);
+    displayComment(allComments, userCommentsDiv, commentHeader);
+  });
 };
 
 export default popupWindow;
