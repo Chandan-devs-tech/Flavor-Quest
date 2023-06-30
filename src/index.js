@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import './style.css';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';

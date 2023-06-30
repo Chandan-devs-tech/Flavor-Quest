@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import { involvementCommentUrl } from './apiData.js';
+
 const setComment = async (param1, param2, param3) => {
-    if (param2 && param3) {
+  if (param2 && param3) {
     const commentData = {
       item_id: param1,
       username: param2,
@@ -20,16 +22,16 @@ const setComment = async (param1, param2, param3) => {
         console.log('Comment submitted successfully');
         console.log(commentData);
       }
-    //   else {
-    //     console.error('Error submitting comment');
-    //   }
+      //   else {
+      //     console.error('Error submitting comment');
+      //   }
 
       // const json = await response.json();
       // return json;
     } catch (error) {
       console.error('Error submitting comment', error);
     }
-    }
+  }
 //     else {
 //     console.error('Please provide a name and comment');
 //   }
