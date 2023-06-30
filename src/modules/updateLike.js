@@ -1,6 +1,7 @@
-const updateNumberOfLikes = (idValue,div) => {
-  let foodLikes = parseInt(div.textContent);
-  foodLikes++;
+const updateNumberOfLikes = (idValue, div) => {
+  let foodLikes = parseInt(div.textContent, 10);
+
+  foodLikes += 1;
   div.textContent = `${foodLikes} likes`;
 };
 
