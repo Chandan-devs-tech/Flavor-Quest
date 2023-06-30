@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console no-alert */
 import { involvementCommentUrl } from './apiData.js';
 
 const setComment = async (param1, param2, param3) => {
@@ -29,11 +29,6 @@ const setComment = async (param1, param2, param3) => {
       console.error('Error submitting comment', error);
     }
   } else if (!param2 || !param3) {
-    const commentData = {
-      item_id: param1,
-      username: param2,
-      comment: param3,
-    };
     alert('Please fill all the fields.');
     console.error('Error submitting comment');
   }
