@@ -10,7 +10,6 @@ const fetchLikes = async () => {
       },
     });
     const data = await result.json();
-    console.log(data);
     return data;
   } catch (error) {
     return [];

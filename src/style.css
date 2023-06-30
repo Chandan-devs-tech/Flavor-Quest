@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f9e0bb;
 }
 
 header {
@@ -22,8 +23,9 @@ header {
   padding: 0 20px 0 20px;
   width: 100%;
   align-items: center;
-  border: 1px solid #000;
+  background: #884a39;
   height: 70px;
+  color: #ffc26f;
 }
 
 .navList {
@@ -34,46 +36,33 @@ header {
 }
 
 .textLogo {
-  color: red;
+  color: #ffc26f;
   font-size: 25px;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 footer {
-  border: 2px solid black;
   padding: 20px;
   justify-self: flex-end;
   position: fixed;
   bottom: 2px;
   width: 100%;
-  background: #000;
-  color: #fff;
-  text-align: center;
-}
-
-.main-title {
-  text-align: center;
-  font-size: 45px;
-  font-weight: 600;
-  margin-top: 15px;
-}
-
-.main-para {
-  width: 80%;
-  text-align: justify;
-  font-size: 20px;
-  margin-top: 15px;
+  background: #884a39;
+  color: #ffc26f;
+  display: flex;
+  justify-content: center;
 }
 
 .main-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  margin: 70px 0;
+  margin: 40px 0;
 }
 
 .gallery-item {
+  border: 3px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,12 +70,15 @@ footer {
   margin: 30px;
   gap: 6px;
   padding: 10px;
+  border-radius: 15px;
+  background: #ffc26f;
 }
 
 .meal-img {
-  width: 65%;
+  width: 85%;
   height: 50%;
   border: 1px solid black;
+  border-radius: 17px;
 }
 
 .like-comment {
@@ -113,6 +105,13 @@ footer {
   gap: 10px;
 }
 
+.comment-header,
+.food-name,
+.form-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .comment-btn {
   width: 30%;
   padding: 6px;
@@ -127,19 +126,18 @@ footer {
 
 .popup-container {
   width: 65%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
   background-color: white;
-  padding: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   gap: 8px;
   justify-content: center;
   align-items: center;
   overflow: scroll;
+  padding-top: 15%;
 }
 
 .overlay {
@@ -148,10 +146,7 @@ footer {
   width: 100%;
   display: flex;
   position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+  top: 0;
   justify-content: center;
   align-items: center;
 }
