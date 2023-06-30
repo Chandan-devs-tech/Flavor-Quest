@@ -38,7 +38,9 @@ const popupWindow = async (id) => {
 
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
-  userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
+
+  const userComment = document.createElement('p');
+  userComment.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
 
   const formTitle = document.createElement('div');
   formTitle.className = 'comment-input-sec';
@@ -66,6 +68,7 @@ const popupWindow = async (id) => {
   form.appendChild(yourInsightInput);
   form.appendChild(submit);
 
+  userCommentsDiv.appendChild(userComment);
   popupContainer.appendChild(closeButton);
   popupContainer.appendChild(popupImage);
   popupContainer.appendChild(imgDescipDiv);
