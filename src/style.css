@@ -209,9 +209,10 @@ footer {
   gap: 10px;
 }
 
-.comment-container {
-  width: 228px;
-  height: auto;
+.comments-container {
+  width: 500px;
+  height: 150px;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 768px) {
