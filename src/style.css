@@ -10,6 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /* justify-content: center; */
 }
 
 header {
@@ -38,6 +40,10 @@ header {
   font-size: 25px;
   font-weight: 900;
   letter-spacing: 2px;
+}
+
+.container {
+  height: 65vh;
 }
 
 footer {

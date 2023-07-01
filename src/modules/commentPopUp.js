@@ -73,6 +73,8 @@ const popupWindow = async (id) => {
   popupContainer.appendChild(formTitle);
   popupContainer.appendChild(form);
   overlay.appendChild(popupContainer);
+
+  // Append the popup container to the body of the document
   mainContainer.appendChild(overlay);
 
   const closePopup = () => {
