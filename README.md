@@ -54,7 +54,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Link of FLAVOR QUEST](https://chandan-devs-tech.github.io/Flavor-Quest/)
+  
+- [Video Link](https://www.youtube.com/watch?v=h2iqNu9sBp8)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,35 +77,33 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-sh
+```sh
   cd my-folder
   git clone https://github.com/Chandan-devs-tech/Flavor-Quest.git
-
+```
 ### Install
 
 Install this project with:
 
-sh
+```sh
   cd Flavor-Quest
   npm install
-
+```
 ### Usage
 
 To run the project, execute the following command:
  command:
 
-sh
+```sh
   npm run start
-
-
-
+```
 ### Run tests
 
 To run tests, run the following command:
 
-sh
+```sh
   npm run test
-
+```
 ### Deployment
 
 You can deploy this project using:
@@ -127,8 +127,8 @@ You can deploy this project using:
 👤 MD. Nohain Islam
 
 - GitHub: [@githubhandle](https://github.com/Zafron047)
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+- Twitter: [@twitterhandle](https://https://twitter.com/NohainZ)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nohain-islam-0261b4148/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +136,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] [Adding extra wrb pages]
+- [ ] [Adding extra web pages]
 - [ ] [Better user interface]
 - [ ] [More functioanlities]
 
