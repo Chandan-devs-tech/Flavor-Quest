@@ -41,3 +41,17 @@ const getComments = async (id) => {
 };
 
 export { setComment, getComments };
+
+// get from api function
+const displayComment = (commentsArray, param, param1) => {
+  param.innerHTML = '';
+  commentsArray.forEach((element) => {
+    param.innerHTML += `<div>${element.creation_date} ${element.username}: ${element.comment}</div>`;
+    param1.innerHTML = `Total comment (${commentsArray.length})`;
+  });
+};
+
+export { setComment, getComments, displayComment };
+// Finished set comments to API
+
+export default setComment;

@@ -28,7 +28,7 @@ const showMeals = async () => {
       const likeCommentDiv = document.createElement('div');
       likeCommentDiv.className = 'like-comment';
 
-      // Create the paragraph element for item name
+      // Create the paragraph element for each item name
       const itemName = document.createElement('p');
       itemName.className = 'item-name';
       itemName.textContent = item.strMeal;
