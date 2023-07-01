@@ -35,4 +35,6 @@ const setComment = async (param1, param2, param3) => {
   }
 };
 
+// Finished set comments to API
+
 export default setComment;
