@@ -38,6 +38,7 @@ const getComments = async (id) => {
   return comments;
 };
 
+// get from api function
 const displayComment = (commentsArray, param, param1) => {
   param.innerHTML = '';
   commentsArray.forEach((element) => {
