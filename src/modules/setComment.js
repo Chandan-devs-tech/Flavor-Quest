@@ -34,10 +34,13 @@ const getComments = async (id) => {
     options,
   );
 
-  const comments = response.json();
-  return comments;
+  const comments = await response.json();
+  if (comments.length > 0) {
+    return comments;
+  } return [];
 };
 
+// get from api function
 const displayComment = (commentsArray, param, param1) => {
   param.innerHTML = '';
   commentsArray.forEach((element) => {
@@ -47,3 +50,4 @@ const displayComment = (commentsArray, param, param1) => {
 };
 
 export { setComment, getComments, displayComment };
+// Finished set comments to API

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { setComment, getComments, displayComment } from './setComment.js';
+import { setComment, getComments } from './setComment.js';
+import displayComment from './displayComment.js';
 
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
@@ -103,6 +104,8 @@ const popupWindow = async (id) => {
   popupContainer.appendChild(formTitle);
   popupContainer.appendChild(form);
   overlay.appendChild(popupContainer);
+
+  // Append the popup container to the body of the document
   mainContainer.appendChild(overlay);
 
   const closePopup = () => {
