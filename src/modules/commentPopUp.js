@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import setComment from './setComment.js';
 
 const popupWindow = async (id) => {

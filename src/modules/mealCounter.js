@@ -1,6 +1,6 @@
-const mealcounter = async () => {
-  const request = new Request('https://www.themealdb.com/api/json/v1/1/filter.php?a=American');
-  const result = await fetch(request);
+export const mealcounter = async () => {
+  const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American';
+  const result = await fetch(url);
   const data = await result.json();
   return data.meals.length;
 };
@@ -10,4 +10,4 @@ const showCount = (num) => {
   homeli.textContent = `(${num})Meals`;
 };
 
-export { mealcounter, showCount };
+export { showCount };
