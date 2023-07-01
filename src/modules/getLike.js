@@ -1,5 +1,6 @@
 import { involvementLikeUrl } from './apiData.js';
 
+// Creating a fetchLikes function
 const fetchLikes = async () => {
   try {
     const result = await fetch(involvementLikeUrl, {
