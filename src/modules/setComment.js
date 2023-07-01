@@ -39,4 +39,3 @@ const getComments = async (id) => {
 };
 
 export { setComment, getComments };
-};
