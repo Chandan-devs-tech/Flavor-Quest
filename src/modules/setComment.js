@@ -1,5 +1,3 @@
-/* eslint-disable no-alert */
-
 import { involvementCommentUrl } from './apiData.js';
 
 const setComment = async (param1, param2, param3) => {
@@ -40,14 +38,4 @@ const getComments = async (id) => {
   } return [];
 };
 
-// get from api function
-const displayComment = (commentsArray, param, param1) => {
-  param.innerHTML = '';
-  commentsArray.forEach((element) => {
-    param.innerHTML += `<div>${element.creation_date} ${element.username}: ${element.comment}</div>`;
-    param1.innerHTML = `Total comment (${commentsArray.length})`;
-  });
-};
-
-export { setComment, getComments, displayComment };
-// Finished set comments to API
+export { setComment, getComments };

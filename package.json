@@ -48,6 +48,8 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "abab": "^2.0.6",
     "abbrev": "^1.1.1",
     "acorn": "^8.9.0",
@@ -328,6 +330,7 @@
     "isexe": "^2.0.0",
     "jackspeak": "^2.2.1",
     "jake": "^10.8.7",
+    "jest-environment-jsdom": "^29.5.0",
     "js-library-detector": "^6.6.0",
     "js-tokens": "^4.0.0",
     "js-yaml": "^3.14.1",
