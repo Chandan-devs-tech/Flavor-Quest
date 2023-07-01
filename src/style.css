@@ -132,9 +132,9 @@ footer {
 }
 
 .popup-container {
-  height: 75vh;
   width: 65%;
   display: flex;
+  flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -142,7 +142,7 @@ footer {
   background-color: white;
   padding: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  gap: 30px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
 }
@@ -171,6 +171,7 @@ footer {
   align-self: flex-start;
   width: 100px;
   padding: 5px;
+  margin-left: 31px;
 }
 
 .name-input,
@@ -184,12 +185,16 @@ footer {
   background: none;
   border: none;
   color: red;
+  position: absolute;
+  top: 8px;
+  right: 0;
 }
 
 .img-desc-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 61px;
+  text-align: center;
 }
 
 .popup-container img {
@@ -205,7 +210,7 @@ footer {
 .form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 10px;
 }

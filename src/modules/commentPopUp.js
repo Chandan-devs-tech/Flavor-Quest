@@ -1,71 +1,60 @@
-const mainContainer = document.querySelector('.main-container');
-const commentBtnPop = (event) => {
-  // Get the gallery item containing the clicked comment button
-  const galleryItem = event.target.closest('.gallery-item');
-
-  // Get the image source from the clicked gallery item
-  const imageSrc = galleryItem.querySelector('img').src;
-  const foodName = galleryItem.querySelector('.item-name').textContent;
-  // Create overlay for popup
+const popupWindow = async (id) => {
+  const mainContainer = document.querySelector('.main-container');
+  const result = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
+  );
+  const data = await result.json();
+  const mealDetails = data.meals[0];
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
-  // Create the popup container element
+
   const popupContainer = document.createElement('div');
   popupContainer.className = 'popup-container';
 
-  // Create the close button
   const closeButton = document.createElement('button');
   closeButton.className = 'popup-close';
   closeButton.innerHTML = 'X';
-  // create div for image and description
+
+  const img = new Image();
+  const popupImage = document.createElement('div');
+  img.src = `${mealDetails.strMealThumb}`;
+  popupImage.appendChild(img);
+
   const imgDescipDiv = document.createElement('div');
   imgDescipDiv.classList.add('img-desc-container');
-
-  // Create the popup image element
-  const popupImage = document.createElement('img');
-  popupImage.src = imageSrc;
+  imgDescipDiv.innerHTML = `<p>Area : ${mealDetails.strArea} </p>
+  <p>Measure : ${mealDetails.strMeasure2}</p>
+  <p>Ingedients : ${mealDetails.strIngredient1} </p>
+  <p>Category: ${mealDetails.strCategory}</p>
+ `;
 
   const popupFoodName = document.createElement('h3');
-  popupFoodName.textContent = foodName;
+  popupFoodName.textContent = `${mealDetails.strMeal}`;
 
-  const description = document.createElement('div');
-  description.className = 'description';
-  description.innerHTML = `<div class="left">
-      <p>Ingredient: Organic</p>
-      <p>Portion: 1:2</p>
-    </div>
-    <div class="right">
-      <p>Take Away</p>
-      <p>Price: Negociable</p>
-    </div>`;
-  // div for comment and form section
-  const formCommentDiv = document.createElement('div');
-  formCommentDiv.classList.add('form-comment-div');
   const commentHeader = document.createElement('h4');
   commentHeader.className = 'comment-header';
   commentHeader.innerHTML = 'Comments (Counter coming soon)';
-  // div for showing user comments
+
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
-  userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit ad soluta quaerat eveniet corrupti cumque nisi omnis nemo harum provident.';
-  const userComments = document.createElement('ul');
-  const comment = document.createElement('li');
-  comment.innerHTML = 'date user: comment';
-  userComments.appendChild(comment);
+  userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
 
-  const commentInputSec = document.createElement('div');
-  commentInputSec.className = 'comment-input-sec';
-  commentInputSec.textContent = 'Add a comment';
+  const formTitle = document.createElement('div');
+  formTitle.className = 'comment-input-sec';
+  formTitle.textContent = 'Add a comment';
+
   const form = document.createElement('form');
   form.className = 'form';
+
   const nameInput = document.createElement('input');
   nameInput.className = 'name-input';
   nameInput.type = 'text';
   nameInput.placeholder = 'Your Name';
 
-  const yourInsightInput = document.createElement('input');
+  const yourInsightInput = document.createElement('textarea');
   yourInsightInput.className = 'your-insight';
-  yourInsightInput.type = 'text';
+  yourInsightInput.cols = 40;
+  yourInsightInput.rows = 6;
   yourInsightInput.placeholder = 'Your Insights';
 
   const submit = document.createElement('button');
@@ -76,18 +65,13 @@ const commentBtnPop = (event) => {
   form.appendChild(yourInsightInput);
   form.appendChild(submit);
 
-  // Append the popup image to the popup container
   popupContainer.appendChild(closeButton);
-  imgDescipDiv.appendChild(popupImage);
-  imgDescipDiv.appendChild(popupFoodName);
-  imgDescipDiv.appendChild(description);
+  popupContainer.appendChild(popupImage);
   popupContainer.appendChild(imgDescipDiv);
-  formCommentDiv.appendChild(commentHeader);
-  formCommentDiv.appendChild(userCommentsDiv);
-  formCommentDiv.appendChild(userComments);
-  formCommentDiv.appendChild(commentInputSec);
-  formCommentDiv.appendChild(form);
-  popupContainer.appendChild(formCommentDiv);
+  popupContainer.appendChild(commentHeader);
+  popupContainer.appendChild(userCommentsDiv);
+  popupContainer.appendChild(formTitle);
+  popupContainer.appendChild(form);
   overlay.appendChild(popupContainer);
 
   // Append the popup container to the body of the document
@@ -100,4 +84,4 @@ const commentBtnPop = (event) => {
   closeButton.addEventListener('click', closePopup);
 };
 
-export default commentBtnPop;
+export default popupWindow;
