@@ -89,7 +89,6 @@ const commentBtnPop = (event) => {
   formCommentDiv.appendChild(form);
   popupContainer.appendChild(formCommentDiv);
   overlay.appendChild(popupContainer);
-  // popupContainer.appendChild(submit);
 
   // Append the popup container to the body of the document
   mainContainer.appendChild(overlay);
