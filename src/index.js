@@ -52,7 +52,6 @@ const showMeals = async () => {
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
       commentBtn.addEventListener('click', () => {
-        console.log(item.idMeal);
         popupWindow(item.idMeal);
       });
 

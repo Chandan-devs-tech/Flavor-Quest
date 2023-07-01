@@ -5,7 +5,6 @@ const popupWindow = async (id) => {
   );
   const data = await result.json();
   const mealDetails = data.meals[0];
-  console.log(mealDetails);
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
 
