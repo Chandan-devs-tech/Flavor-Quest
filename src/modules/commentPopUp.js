@@ -1,14 +1,16 @@
 /* eslint-disable no-console */
-import setComment from './setComment.js';
+import { setComment, getComments, displayComment } from './setComment.js';
 
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
   const result = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
   );
+
   const data = await result.json();
   const mealDetails = data.meals[0];
   const overlay = document.createElement('div');
+  const footer = document.querySelector('.footer');
   overlay.classList.add('overlay');
 
   const popupContainer = document.createElement('div');
@@ -16,7 +18,7 @@ const popupWindow = async (id) => {
 
   const closeButton = document.createElement('button');
   closeButton.className = 'popup-close';
-  closeButton.innerHTML = 'X';
+  closeButton.innerHTML = '&times';
 
   const img = new Image();
   const popupImage = document.createElement('div');
@@ -32,20 +34,30 @@ const popupWindow = async (id) => {
  `;
 
   const popupFoodName = document.createElement('h3');
+  popupFoodName.className = 'food-name';
   popupFoodName.textContent = `${mealDetails.strMeal}`;
 
-  const commentHeader = document.createElement('h4');
-  commentHeader.className = 'comment-header';
-  commentHeader.innerHTML = 'Comments (Counter coming soon)';
+  // const commentHeader = document.createElement('h4');
+  // commentHeader.className = 'comment-header';
+  // commentHeader.innerHTML = 'Comments (Counter coming soon)';
 
-  const userCommentsDiv = document.createElement('div');
-  userCommentsDiv.classList.add('comments-container');
-
-  const userComment = document.createElement('p');
-  userComment.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
+  // const userCommentsDiv = document.createElement('div');
+  // userCommentsDiv.classList.add('comments-container');
+  // userCommentsDiv.innerHTML = `
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // <p>'User comment here</p>
+  // `;
 
   const formTitle = document.createElement('div');
-  formTitle.className = 'comment-input-sec';
+  formTitle.className = 'form-title';
   formTitle.textContent = 'Add a comment';
 
   const form = document.createElement('form');
@@ -66,22 +78,25 @@ const popupWindow = async (id) => {
   submit.className = 'submit';
   submit.innerText = 'Submit';
 
-  // set comments to API starts
-  submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    const nameVal = nameInput.value;
-    const insightVal = yourInsightInput.value;
-    setComment(id, nameVal, insightVal);
-  });
-  // set comments to API done
+  const commentHeader = document.createElement('h4');
+  commentHeader.className = 'comment-header';
+  // commentHeader.innerHTML = '(Counter coming soon) Comments';
+  const userCommentsDiv = document.createElement('div');
+  userCommentsDiv.classList.add('comments-container');
+
+  const allComments = await getComments(id);
+  displayComment(allComments, userCommentsDiv, commentHeader);
+
+  // get comments from API starts
+
+  // get comments from API done
 
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
   form.appendChild(submit);
-
-  userCommentsDiv.appendChild(userComment);
   popupContainer.appendChild(closeButton);
   popupContainer.appendChild(popupImage);
+  popupContainer.appendChild(popupFoodName);
   popupContainer.appendChild(imgDescipDiv);
   popupContainer.appendChild(commentHeader);
   popupContainer.appendChild(userCommentsDiv);
@@ -94,9 +109,21 @@ const popupWindow = async (id) => {
 
   const closePopup = () => {
     mainContainer.removeChild(overlay);
+    footer.style.display = 'flex';
   };
 
   closeButton.addEventListener('click', closePopup);
+
+  // set comments to API starts
+  submit.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const nameVal = nameInput.value;
+    const insightVal = yourInsightInput.value;
+    setComment(id, nameVal, insightVal);
+    const allComments = await getComments(id);
+    console.log('This is allComments', allComments);
+    displayComment(allComments, userCommentsDiv, commentHeader);
+  });
 };
 
 export default popupWindow;

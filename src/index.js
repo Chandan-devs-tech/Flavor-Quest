@@ -4,9 +4,11 @@ import sendLike from './modules/sendLike.js';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';
 import popupWindow from './modules/commentPopUp.js';
+import { mealcounter, showCount } from './modules/mealCounter.js';
 
 let arrayOfMeals = [];
 const mainContainer = document.querySelector('.main-container');
+const footer = document.querySelector('.footer');
 const showMeals = async () => {
   try {
     arrayOfMeals = await getData();
@@ -53,8 +55,10 @@ const showMeals = async () => {
       const commentBtn = document.createElement('button');
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
+
       commentBtn.addEventListener('click', () => {
         popupWindow(item.idMeal);
+        footer.style.display = 'none';
       });
 
       // Create the reservation button
@@ -101,5 +105,7 @@ const showMeals = async () => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
+  const num = await mealcounter();
   await showMeals();
+  showCount(num);
 });
