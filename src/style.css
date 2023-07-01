@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +46,7 @@ footer {
   padding: 20px;
   justify-self: flex-end;
   position: fixed;
-  bottom: 2px;
+  bottom: 1px;
   width: 100%;
   background: #884a39;
   color: #ffc26f;
@@ -131,13 +131,14 @@ footer {
   flex-direction: column;
   position: fixed;
   top: 0;
-  background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  gap: 8px;
+  gap: 20px;
+  border: 10px solid #000;
   justify-content: center;
   align-items: center;
   overflow: scroll;
   padding-top: 15%;
+  background-color: #f9e0bb;
 }
 
 .overlay {
@@ -157,12 +158,20 @@ footer {
   gap: 20px;
 }
 
-.popup-container button {
+.submit {
   align-self: flex-start;
   width: 100px;
   padding: 5px;
   margin-left: 31px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
+
+/* .popup-close {
+  padding:15px;
+} */
 
 .name-input,
 .your-insight {
@@ -171,13 +180,18 @@ footer {
 }
 
 .popup-close {
-  font-size: 20px;
-  background: none;
+  font-size: 25px;
+
+  /* background: none; */
   border: none;
-  color: red;
+  color: #fff;
+  background-color: #000;
   position: absolute;
   top: 8px;
   right: 0;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
 .img-desc-container {
@@ -190,6 +204,8 @@ footer {
 .popup-container img {
   height: 25vh;
   width: 35vh;
+  margin-top: 40px;
+  border-radius: 15px;
 }
 
 .description {
@@ -205,9 +221,15 @@ footer {
   gap: 10px;
 }
 
-.comment-container {
-  width: 228px;
-  height: auto;
+.comments-container {
+  width: 500px;
+
+  /* height: 130px; */
+
+  /* overflow-y: scroll; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {

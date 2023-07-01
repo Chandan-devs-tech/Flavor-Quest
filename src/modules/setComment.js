@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 import { involvementCommentUrl } from './apiData.js';
 
 const setComment = async (param1, param2, param3) => {
@@ -8,29 +10,40 @@ const setComment = async (param1, param2, param3) => {
       comment: param3,
     };
 
-    try {
-      const response = await fetch(involvementCommentUrl, {
-        method: 'POST',
-        body: JSON.stringify(commentData),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      });
-
-      if (response.ok) {
-        console.log('Comment submitted successfully');
-        console.log(commentData);
-        alert('Your comment is received.');
-      } else {
-        alert('Please fill all the fields.');
-      }
-    } catch (error) {
-      console.error('Error submitting comment', error);
-    }
+    await fetch(involvementCommentUrl, {
+      method: 'POST',
+      body: JSON.stringify(commentData),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
   } else if (!param2 || !param3) {
     alert('Please fill all the fields.');
-    console.error('Error submitting comment');
   }
 };
 
-export default setComment;
+const getComments = async (id) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  };
+  const response = await fetch(
+    `${involvementCommentUrl}?item_id=${id}`,
+    options,
+  );
+
+  const comments = response.json();
+  return comments;
+};
+
+const displayComment = (commentsArray, param, param1) => {
+  param.innerHTML = '';
+  commentsArray.forEach((element) => {
+    param.innerHTML += `<div>${element.creation_date} ${element.username}: ${element.comment}</div>`;
+    param1.innerHTML = `Total comment (${commentsArray.length})`;
+  });
+};
+
+export { setComment, getComments, displayComment };
