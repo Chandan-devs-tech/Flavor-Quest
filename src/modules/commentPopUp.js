@@ -88,12 +88,11 @@ const popupWindow = async (id) => {
 
   closeButton.addEventListener('click', closePopup);
 
-  // set comments to API starts
   submit.addEventListener('click', async (event) => {
     event.preventDefault();
     const nameVal = nameInput.value;
     const insightVal = yourInsightInput.value;
-    setComment(id, nameVal, insightVal);
+    await setComment(id, nameVal, insightVal);
     const allComments = await getComments(id);
     displayComment(allComments, userCommentsDiv, commentHeader);
   });
