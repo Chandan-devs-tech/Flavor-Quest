@@ -40,6 +40,10 @@ header {
   letter-spacing: 2px;
 }
 
+.container {
+  height: 65vh;
+}
+
 footer {
   border: 2px solid black;
   padding: 20px;
@@ -137,4 +141,5 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+}
 }
