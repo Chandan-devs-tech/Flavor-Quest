@@ -38,15 +38,6 @@ const getComments = async (id) => {
   if (comments.length > 0) {
     return comments;
   } else {return []}
-  // return (comments.length > 0) ? comments : [];
 };
-
-// const displayComment = (commentsArray, param, param1) => {
-//   param.innerHTML = '';
-//   commentsArray.forEach((element) => {
-//     param.innerHTML += `<div>${element.creation_date} ${element.username}: ${element.comment}</div>`;
-//     param1.innerHTML = `Total comment (${commentsArray.length})`;
-//   });
-// };
 
 export { setComment, getComments };
