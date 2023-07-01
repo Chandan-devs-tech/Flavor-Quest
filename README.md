@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://chandan-devs-tech.github.io/Flavor-Quest/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,8 +127,8 @@ You can deploy this project using:
 👤 MD. Nohain Islam
 
 - GitHub: [@githubhandle](https://github.com/Zafron047)
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+- Twitter: [@twitterhandle](https://https://twitter.com/NohainZ)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nohain-islam-0261b4148/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +136,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] [Adding extra wrb pages]
+- [ ] [Adding extra web pages]
 - [ ] [Better user interface]
 - [ ] [More functioanlities]
 
