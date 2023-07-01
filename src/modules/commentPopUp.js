@@ -38,25 +38,6 @@ const popupWindow = async (id) => {
   popupFoodName.className = 'food-name';
   popupFoodName.textContent = `${mealDetails.strMeal}`;
 
-  // const commentHeader = document.createElement('h4');
-  // commentHeader.className = 'comment-header';
-  // commentHeader.innerHTML = 'Comments (Counter coming soon)';
-
-  // const userCommentsDiv = document.createElement('div');
-  // userCommentsDiv.classList.add('comments-container');
-  // userCommentsDiv.innerHTML = `
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // <p>'User comment here</p>
-  // `;
-
   const formTitle = document.createElement('div');
   formTitle.className = 'form-title';
   formTitle.textContent = 'Add a comment';
@@ -81,16 +62,11 @@ const popupWindow = async (id) => {
 
   const commentHeader = document.createElement('h4');
   commentHeader.className = 'comment-header';
-  // commentHeader.innerHTML = '(Counter coming soon) Comments';
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
 
   const allComments = await getComments(id);
   displayComment(allComments, userCommentsDiv, commentHeader);
-
-  // get comments from API starts
-
-  // get comments from API done
 
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
