@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Link of FLAVOR QUEST Project](https://chandan-devs-tech.github.io/Flavor-Quest/)
+- [Live Link of FLAVOR QUEST](https://chandan-devs-tech.github.io/Flavor-Quest/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,35 +75,33 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-sh
+```sh
   cd my-folder
   git clone https://github.com/Chandan-devs-tech/Flavor-Quest.git
-
+```
 ### Install
 
 Install this project with:
 
-sh
+```sh
   cd Flavor-Quest
   npm install
-
+```
 ### Usage
 
 To run the project, execute the following command:
  command:
 
-sh
+```sh
   npm run start
-
-
-
+```
 ### Run tests
 
 To run tests, run the following command:
 
-sh
+```sh
   npm run test
-
+```
 ### Deployment
 
 You can deploy this project using:
