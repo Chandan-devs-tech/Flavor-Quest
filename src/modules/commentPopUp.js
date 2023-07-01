@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { setComment, getComments, displayComment } from './setComment.js';
+import { setComment, getComments } from './setComment.js';
+import displayComment from './displayComment.js';
 
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
