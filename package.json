@@ -452,6 +452,7 @@
     "postcss-value-parser": "^4.2.0",
     "prelude-ls": "^1.2.1",
     "prepend-http": "^2.0.0",
+    "prettier": "^2.8.8",
     "proc-log": "^3.0.0",
     "progress": "^2.0.3",
     "promise-retry": "^2.0.1",

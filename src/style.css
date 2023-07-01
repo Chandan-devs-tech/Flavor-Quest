@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -128,6 +129,90 @@ footer {
   width: 35%;
   padding: 6px;
   font-size: 15px;
+}
+
+.popup-container {
+  height: 75vh;
+  width: 65%;
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-comment-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup-container button {
+  align-self: flex-start;
+  width: 100px;
+  padding: 5px;
+}
+
+.name-input,
+.your-insight {
+  width: 80%;
+  padding: 4px;
+}
+
+.popup-close {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: red;
+}
+
+.img-desc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup-container img {
+  height: 25vh;
+  width: 35vh;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.comment-container {
+  width: 228px;
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {

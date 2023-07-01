@@ -1,4 +1,5 @@
 import './style.css';
+import commentBtnPop from './modules/commentPopUp.js';
 
 const baseUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American';
 
@@ -18,17 +19,6 @@ const showMeals = async () => {
     const div = document.createElement('div');
     div.classList.add('gallery-item');
     div.setAttribute('data-id', item.idMeal);
-    // div.innerHTML = `
-    // <img src=${item.strMealThumb} alt="" class="meal-img"/>
-    //     <div class="like-comment">
-    //       <p class="item-name">${item.strMeal}</p>
-    //       <i class="fa-regular fa-heart" style="color: #ff0000"></i>
-    //     </div>
-    //     <div class="num-of-likes">0 Likes</div>
-    //     <div class="btn-container">
-    //       <button class="comment-btn">Comment</button>
-    //       <button class="reservation-btn">Reservation</button>
-    //     </div>`;
 
     // Create the image element
     const img = document.createElement('img');
@@ -67,6 +57,9 @@ const showMeals = async () => {
     const commentBtn = document.createElement('button');
     commentBtn.className = 'comment-btn';
     commentBtn.textContent = 'Comment';
+
+    // Attach the click event listener to the comment button
+    commentBtn.addEventListener('click', commentBtnPop);
 
     // Create the reservation button
     const reservationBtn = document.createElement('button');
