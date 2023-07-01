@@ -5,6 +5,8 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -34,3 +36,15 @@ header {
   font-weight: 900;
   letter-spacing: 2px;
 }
+
+.container {
+  height: 65vh;
+}
+
+footer {
+  border: 2px solid black;
+  padding: 20px;
+  justify-self: flex-end;
+}
+
+/* Update */
