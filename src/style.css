@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #000;
+  height: 70px;
+}
+
+.navList {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.textLogo {
+  color: red;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
