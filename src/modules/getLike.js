@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { involvementLikeUrl } from './apiData.js';
 
 const fetchLikes = async () => {

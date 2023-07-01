@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+import setComment from './setComment.js';
+
 const popupWindow = async (id) => {
   const mainContainer = document.querySelector('.main-container');
   const result = await fetch(
@@ -37,7 +40,9 @@ const popupWindow = async (id) => {
 
   const userCommentsDiv = document.createElement('div');
   userCommentsDiv.classList.add('comments-container');
-  userCommentsDiv.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
+
+  const userComment = document.createElement('p');
+  userComment.textContent = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.';
 
   const formTitle = document.createElement('div');
   formTitle.className = 'comment-input-sec';
@@ -61,10 +66,20 @@ const popupWindow = async (id) => {
   submit.className = 'submit';
   submit.innerText = 'Submit';
 
+  // set comments to API starts
+  submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    const nameVal = nameInput.value;
+    const insightVal = yourInsightInput.value;
+    setComment(id, nameVal, insightVal);
+  });
+  // set comments to API done
+
   form.appendChild(nameInput);
   form.appendChild(yourInsightInput);
   form.appendChild(submit);
 
+  userCommentsDiv.appendChild(userComment);
   popupContainer.appendChild(closeButton);
   popupContainer.appendChild(popupImage);
   popupContainer.appendChild(imgDescipDiv);

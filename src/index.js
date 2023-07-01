@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import './style.css';
+import sendLike from './modules/sendLike.js';
 import fetchLikes from './modules/getLike.js';
 import getData from './modules/getBaseData.js';
 import popupWindow from './modules/commentPopUp.js';
@@ -81,6 +83,15 @@ const showMeals = async () => {
 
       countOfLikes.textContent = `${likeOfMeal} likes`;
 
+      // Heart Icon event listener
+      const heartBtn = div.querySelector('.fa-heart');
+      heartBtn.addEventListener('click', () => {
+        sendLike(id, numOfLikesDiv);
+      });
+      heartBtn.addEventListener('mouseup', () => {
+        heartIcon.classList.add('fa-solid');
+        heartIcon.classList.remove('fa-regular');
+      });
       // Now you can use the main div in your DOM
       mainContainer.appendChild(div);
     });
