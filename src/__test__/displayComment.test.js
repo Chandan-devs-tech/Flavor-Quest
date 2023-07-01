@@ -10,7 +10,7 @@ describe('displayComment', () => {
     const param = document.createElement('div');
     const param1 = document.createElement('div');
 
-    // Act - calling display function 
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
 
     // Asserting the assumptions
@@ -27,7 +27,7 @@ describe('displayComment', () => {
     const param = document.createElement('div');
     const param1 = document.createElement('div');
 
-    // Act - calling display function 
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
 
     // Asserting the assumptions
@@ -41,7 +41,7 @@ describe('displayComment', () => {
     const param = document.createElement('div');
     const param1 = document.createElement('div');
 
-    // Act - calling display function 
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
 
     // Asserting the assumptions
@@ -57,10 +57,10 @@ describe('displayComment', () => {
     ];
     const param = document.createElement('div');
     const param1 = document.createElement('div');
-  
-    // Act - calling display function 
+
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
-  
+
     // Asserting the assumptions
     expect(param.innerHTML).toContain('User1: Comment with $pecial characters!');
     expect(param.innerHTML).toContain('User2: Another comment with #special characters?');
@@ -75,27 +75,27 @@ describe('displayComment', () => {
     ];
     const param = document.createElement('div');
     const param1 = document.createElement('div');
-  
-    // Act - calling display function 
+
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
-  
+
     // Asserting the assumptions
     expect(param1.innerHTML).toContain('Total comment (2)');
   });
-  
+
   test('should display correct total comment count when array length is 0', () => {
     // Arrange examples
     const commentsArray = [];
     const param = document.createElement('div');
     const param1 = document.createElement('div');
-  
-    // Act - calling display function 
+
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
-  
+
     // Asserting the assumptions
     expect(param1.innerHTML).toContain('Total comment (0)');
   });
-  
+
   test('should display correct total comment count when array length is 1', () => {
     // Arrange examples
     const commentsArray = [
@@ -103,14 +103,14 @@ describe('displayComment', () => {
     ];
     const param = document.createElement('div');
     const param1 = document.createElement('div');
-  
-    // Act - calling display function 
+
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
-  
+
     // Asserting the assumptions
     expect(param1.innerHTML).toContain('Total comment (1)');
   });
-  
+
   test('should display correct total comment count when array length is greater than 10', () => {
     // Arrange examples
     const commentsArray = [
@@ -130,13 +130,11 @@ describe('displayComment', () => {
     ];
     const param = document.createElement('div');
     const param1 = document.createElement('div');
-  
-    // Act - calling display function 
+
+    // Act - calling display function
     displayComment(commentsArray, param, param1);
-  
+
     // Asserting the assumptions
     expect(param1.innerHTML).toContain('Total comment (13)');
   });
-  
-  
 });
