@@ -37,7 +37,7 @@ const getComments = async (id) => {
   const comments = await response.json();
   if (comments.length > 0) {
     return comments;
-  } else {return []}
+  } return [];
 };
 
 export { setComment, getComments };
