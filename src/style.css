@@ -42,6 +42,10 @@ header {
   letter-spacing: 2px;
 }
 
+.container {
+  height: 65vh;
+}
+
 footer {
   padding: 20px;
   justify-self: flex-end;

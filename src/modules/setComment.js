@@ -48,3 +48,6 @@ const displayComment = (commentsArray, param, param1) => {
 };
 
 export { setComment, getComments, displayComment };
+// Finished set comments to API
+
+export default setComment;
