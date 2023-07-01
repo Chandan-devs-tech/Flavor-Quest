@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { setComment, getComments } from './setComment.js';
 import displayComment from './displayComment.js';
 
@@ -96,7 +95,6 @@ const popupWindow = async (id) => {
     const insightVal = yourInsightInput.value;
     setComment(id, nameVal, insightVal);
     const allComments = await getComments(id);
-    console.log('This is allComments', allComments);
     displayComment(allComments, userCommentsDiv, commentHeader);
   });
 };
