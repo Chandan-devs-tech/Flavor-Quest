@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9e0bb;
+}
+
+header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  align-items: center;
+  background: #884a39;
+  height: 70px;
+  color: #ffc26f;
+}
+
+.navList {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.textLogo {
+  color: #ffc26f;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.container {
+  height: 65vh;
+}
+
+footer {
+  padding: 20px;
+  justify-self: flex-end;
+  position: fixed;
+  bottom: 1px;
+  width: 100%;
+  background: #884a39;
+  color: #ffc26f;
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  margin: 40px 0;
+}
+
+.gallery-item {
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #ffc26f;
+}
+
+.meal-img {
+  width: 85%;
+  height: 50%;
+  border: 1px solid black;
+  border-radius: 17px;
+}
+
+.like-comment {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 20px;
+  height: 80px;
+}
+
+.num-of-likes {
+  display: flex;
+  width: 70%;
+  justify-content: end;
+  font-size: 18px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-header,
+.food-name,
+.form-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.comment-btn {
+  width: 30%;
+  padding: 6px;
+  font-size: 15px;
+}
+
+.reservation-btn {
+  width: 35%;
+  padding: 6px;
+  font-size: 15px;
+}
+
+.popup-container {
+  width: 65%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  gap: 20px;
+  border: 10px solid #000;
+  justify-content: space-between;
+  align-items: center;
+  overflow: scroll;
+  background-color: #f9e0bb;
+}
+
+.overlay {
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-comment-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.submit {
+  align-self: flex-start;
+  width: 100px;
+  padding: 5px;
+  margin-left: 31px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.name-input,
+.your-insight {
+  width: 80%;
+  padding: 4px;
+}
+
+.popup-close {
+  font-size: 25px;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.img-desc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 61px;
+  text-align: center;
+}
+
+.popup-container img {
+  height: 25vh;
+  width: 35vh;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.comments-container {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
