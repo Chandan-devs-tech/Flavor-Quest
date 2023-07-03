@@ -55,8 +55,6 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Link of FLAVOR QUEST](https://chandan-devs-tech.github.io/Flavor-Quest/)
-  
-- [Video Link](https://www.youtube.com/watch?v=h2iqNu9sBp8)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
